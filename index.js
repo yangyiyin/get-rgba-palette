@@ -60,7 +60,7 @@ function compute(pixels, count, quality, filter) {
     if (vboxes) {
         return vboxes.map(function(vb) { //map to array structure
             return vb
-        }).slice(0, count)
+        }).filter((item)=>{return item.vbox._count > 0;}).slice(0, count)
     }
     else {
         return [];
